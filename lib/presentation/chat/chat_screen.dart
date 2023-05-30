@@ -35,9 +35,11 @@ class _ChatView extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-                child: Container(
-              color: Colors.amber,
-            )),
+                child: ListView.builder(
+                    itemCount: 100,
+                    itemBuilder: (context, index) {
+                      return Text('$index');
+                    })),
           ],
         ),
       ),
