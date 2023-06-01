@@ -17,8 +17,9 @@ class MyMessageBubble extends StatelessWidget {
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child:
-                Text('texto de pruebas', style: TextStyle(color: Colors.white)),
+            child: Text(
+                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s  ',
+                style: TextStyle(color: Colors.white)),
           ),
         ),
         const SizedBox(height: 10)
