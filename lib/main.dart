@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:yes_no_app/presentation/providers/chat_provider.dart';
 import 'package:yes_no_app/presentation/screens/chat/chat_screen.dart';
 
 import 'config/theme/app_theme.dart';
@@ -12,10 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Material App',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme(selectedColor: 0).theme(),
-        home: const ChatScreen());
+    return MultiProvider(
+      // Se crea provider a nivel global de la aplicación
+      providers: [ChangeNotifierProvider(create: (_) => ChatProvider())],
+      child: MaterialApp(
+          title: 'Material App',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme(selectedColor: 0).theme(),
+          home: const ChatScreen()),
+    );
   }
 }
